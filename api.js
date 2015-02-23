@@ -9,8 +9,18 @@ jQuery(document).ready(function() {
     });
     
     p.done(function(text) {
-        $("#texto").html(text);
+        $("div.texto").html(text);
         
     });
 
+    $("button").click(function(){
+        $.ajax({
+           type:"GET",
+            url:"text2",
+            cache:false
+        }).done(function(text2){
+            $("div.texto2").html(text2);
+        });
+        
+     });
 });
